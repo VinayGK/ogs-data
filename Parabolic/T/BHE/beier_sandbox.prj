@@ -20,6 +20,28 @@
             <thermal_conductivity_gas>K_g</thermal_conductivity_gas>
             <heat_capacity_gas>Cp_g</heat_capacity_gas>
             <density_gas>rho_g</density_gas>
+            
+            <borehole_heat_exchangers>
+                <borehole_heat_exchanger id="0">
+                    <bhe_polyline>BHE_1</bhe_polyline>
+                    <bhe_type>BHE_TYPE_1U</bhe_type>
+                    <bhe_length>18.3</bhe_length>
+                    <bhe_diameter>0.126</bhe_diameter>
+                    <bhe_refrigerant_flow_rate>1.97e-4</bhe_refrigerant_flow_rate>
+                    <bhe_pipe_inner_radius>0.013665</bhe_pipe_inner_radius>
+                    <bhe_pipe_outer_radius>0.0167</bhe_pipe_outer_radius>
+                    <bhe_pipe_in_wall_thickness>0.00305</bhe_pipe_in_wall_thickness>
+                    <bhe_pipe_out_wall_thickness>0.00305</bhe_pipe_out_wall_thickness>
+                    <bhe_fluid_idx>0</bhe_fluid_idx>
+                    <bhe_fluid_longitudinal_dispsion_length>1.0e-4</bhe_fluid_longitudinal_dispsion_length>
+                    <bhe_grout_density>2190.0</bhe_grout_density>
+                    <bhe_grout_porosity>0.2</bhe_grout_porosity>
+                    <bhe_grout_heat_capacity>1000.0</bhe_grout_heat_capacity>
+                    <bhe_pipe_wall_thermal_conductivity>0.39</bhe_pipe_wall_thermal_conductivity>
+                    <bhe_grout_thermal_conductivity>0.73</bhe_grout_thermal_conductivity>
+                    <bhe_pipe_distance>0.053</bhe_pipe_distance>
+                </borehole_heat_exchanger>
+            </borehole_heat_exchangers>
 
             <process_variables>
                 <process_variable>temperature_soil</process_variable>
@@ -68,7 +90,8 @@
             <type>VTK</type>
             <prefix>beier_sandbox</prefix>
             <timesteps>
-                <pair><repeat> 1 </repeat><each_steps> 60 </each_steps></pair>
+                <pair><repeat> 10</repeat><each_steps> 1 </each_steps></pair>
+                <pair><repeat> 1 </repeat><each_steps> 50 </each_steps></pair>
                 <pair><repeat> 1 </repeat><each_steps> 3107 </each_steps></pair>
             </timesteps>
         </output>
@@ -126,10 +149,11 @@
             <value>295.25</value>
         </parameter>
         <parameter>
-            <name>T_neumann</name>
+            <name>T_bound</name>
             <type>Constant</type>
-            <value>58.3</value>
+            <value>300.0</value>
         </parameter>
+
     </parameters>
 
     <process_variables>
@@ -144,8 +168,8 @@
                 <boundary_condition>
                     <geometrical_set>beier_sandbox</geometrical_set>
                     <geometry>BHE_1</geometry>
-                    <type>Neumann</type>
-                    <parameter>T_neumann</parameter>
+                    <type>Dirichlet</type>
+                    <parameter>T_bound</parameter>
                 </boundary_condition>
            </boundary_conditions>
 
