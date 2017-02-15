@@ -25,6 +25,8 @@
                 <borehole_heat_exchanger id="0">
                     <bhe_polyline>BHE_1</bhe_polyline>
                     <bhe_type>BHE_TYPE_1U</bhe_type>
+                    <bhe_bound_type>FIXED_INFLOW_TEMP</bhe_bound_type>
+                    <bhe_use_external_therm_resis>false</bhe_use_external_therm_resis>
                     <bhe_length>18.3</bhe_length>
                     <bhe_diameter>0.126</bhe_diameter>
                     <bhe_refrigerant_flow_rate>1.97e-4</bhe_refrigerant_flow_rate>
@@ -52,6 +54,26 @@
                <secondary_variable type="static" internal_name="heat_flux_y" output_name="heat_flux_y" />
                <secondary_variable type="static" internal_name="heat_flux_z" output_name="heat_flux_z" />
             </secondary_variables>
+
+            <fluid>
+                <refrigerant_density>
+                    <type>Constant</type>
+                    <value> 1.e3 </value>
+                </refrigerant_density>
+                <refrigerant_viscosity>
+                    <type>Constant</type>
+                    <value> 1.e-3 </value>
+                </refrigerant_viscosity>
+                <refrigerant_specific_heat_capacity>
+                    <type>Constant</type>
+                    <value> 4200 </value>
+                </refrigerant_specific_heat_capacity>
+                <refrigerant_thermal_conductivity>
+                    <type>Constant</type>
+                    <value> 2.5 </value>
+                </refrigerant_thermal_conductivity>
+            </fluid>
+
         </process>
     </processes>
 
