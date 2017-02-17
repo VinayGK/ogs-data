@@ -1,0 +1,82 @@
+Mesh: triangle fine with second term
+
+dx = 0.02mm, w = 1 mm/s, dt = 0.01, C = 0.5
+left: 1.90001e-10
+right: 1.90365e-10
+err: 0.00191
+
+dx = 0.02mm, w = 1 mm/s, dt = 0.1
+left: 1.90001e-10
+right: 1.90371e-10
+err: 0.00195
+
+dx = 0.02mm, w = 1 mm/s, dt = 1
+left: 1.90001e-10
+right: 1.90364e-10
+err: 0.00191
+
+dx = 0.02mm, w = 1000 mm/s, dt = 1
+left: 1.89998e-7
+right: 1.90207e-7
+err: 0.0011
+
+dx = 0.02mm, w = 10000 mm/s, dt = 1
+left: 1.89998e-6
+right: 1.90199e-6
+err: 0.00106
+
+Mesh: triangle coarse with second term
+
+dx = 0.04mm, w = 1000 mm/s, dt = 1
+
+left: 1.89925e-7
+right: 1.9026e-7
+err: 0.00176
+
+Mesh: qudratic coarse with second term
+
+dx = 0.02mm, w = 1000 mm/s, dt = 1
+left: 1.89311e-7
+right: 1.90175e-7
+err: 0.00456
+
+Mesh: qudratic fine with second term
+
+dx = 0.01mm, w = 1000 mm/s, dt = 1
+left: 1.89634e-7
+right: 1.90163e-7
+err: 0.00279
+
+Mesh: qudratic fine without second term
+
+dx = 0.01mm, w = 1000 mm/s, dt = 1
+left: 1.89716e-7
+right: 1.98358e-7
+err: 0.0455
+
+dx = 0.01mm, w = 10000 mm/s, dt = 1
+left: 1.89716e-7
+right: 1.98345e-7
+err: 0.0455
+
+Mesh: qudratic coarse without second term
+
+dx = 0.02mm, w = 1000 mm/s, dt = 1
+left: 1.89439e-7
+right: 1.98357e-7
+err: 0.0471
+
+
+Mesh: triangle fine without second term
+
+dx = 0.02mm, w = 1000 mm/s, dt = 1
+left: 1.90064e-7
+right: 1.98357e-7
+err: 0.0436
+
+Mesh: triangle coarse without second term
+
+dx = 0.04mm, w = 1000 mm/s, dt = 1
+left: 1.90064e-7
+right: 1.98344e-7
+err: 0.0436
