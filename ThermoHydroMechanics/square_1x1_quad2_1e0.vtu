@@ -3,15 +3,6 @@
   <UnstructuredGrid>
     <Piece NumberOfPoints="8" NumberOfCells="1">
       <PointData>
-        <DataArray type="Float64" Name="displacement" NumberOfComponents="2" format="binary" RangeMin="0" RangeMax="0.003597629872">
-          AQAAAACAAACAAAAAWAAAAA==eJxjYEAFDv6lJ79eS7FHE2Z4dN9T4hlQfMIen8wPQLrX6GjLHyC9zkvw9dtrIRjqP/SEtLwAiks+OP0GZF7UesapP4H8Uv57j54B6RMnJc0/AsUBscoskA==
-        </DataArray>
-        <DataArray type="Float64" Name="pressure" format="binary" RangeMin="0" RangeMax="0.00052078074553">
-          AQAAAACAAABAAAAAJQAAAA==eJyzfjDlz3wBR/ujgQ0KC4D0if93wfwb8+cqgfgMBAAA4SEO9g==
-        </DataArray>
-        <DataArray type="Float64" Name="temperature" format="binary" RangeMin="0" RangeMax="80">
-          AQAAAACAAABAAAAAGgAAAA==eJxjYACBEAcFraOuef+DHRiw8nEDAF9PB9E=
-        </DataArray>
       </PointData>
       <CellData>
         <DataArray type="Int32" Name="MaterialIDs" format="binary" RangeMin="0" RangeMax="0">
