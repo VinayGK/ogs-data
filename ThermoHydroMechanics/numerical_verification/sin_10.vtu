@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- Time step: 10 | Time: 1.000000000000e+03 -->
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+  <UnstructuredGrid>
+    <Piece NumberOfPoints="4" NumberOfCells="1">
+      <Points>
+        <DataArray type="Float64" NumberOfComponents="3" format="ascii">
+          0.000000000000e+00 0.000000000000e+00 0.000000000000e+00
+          1.000000000000e+00 0.000000000000e+00 0.000000000000e+00
+          1.000000000000e+00 1.000000000000e+00 0.000000000000e+00
+          0.000000000000e+00 1.000000000000e+00 0.000000000000e+00
+        </DataArray>
+      </Points>
+      <Cells>
+        <DataArray type="Int64" Name="connectivity" format="ascii">
+          0 1 2 3 
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="ascii">
+          4 
+        </DataArray>
+        <DataArray type="UInt8" Name="types" format="ascii">
+          9 
+        </DataArray>
+      </Cells>
+      <PointData Scalars="TEMPERATURE1">
+        <DataArray type="Float64" Name="TEMPERATURE1" format="ascii">
+          3.631500000000e+02 3.631500000000e+02 3.631500000000e+02 3.631500000000e+02 
+        </DataArray>
+        <DataArray type="Float64" Name="PRESSURE1" format="ascii">
+          1.041641744798e-01 1.041641744798e-01 1.041641744798e-01 1.041641744798e-01 
+        </DataArray>
+        <DataArray type="Float64" Name="STRESS_XX" format="ascii">
+          1.041628256387e-01 1.041640563850e-01 1.041640928108e-01 1.041650980624e-01 
+        </DataArray>
+        <DataArray type="Float64" Name="STRESS_XY" format="ascii">
+          -5.201628657893e-08 -6.370124836891e-07 -1.598121142988e-07 -3.908747508660e-07 
+        </DataArray>
+        <DataArray type="Float64" Name="STRESS_YY" format="ascii">
+          1.041628256387e-01 1.041640930201e-01 1.041644376186e-01 1.041650980624e-01 
+        </DataArray>
+        <DataArray type="Float64" Name="STRESS_ZZ" format="ascii">
+          1.041483181461e-01 1.041514707565e-01 1.041640920509e-01 1.041637941119e-01 
+        </DataArray>
+        <DataArray type="Float64" Name="STRAIN_XX" format="ascii">
+          2.544261071584e-03 2.544256535810e-03 2.544073043333e-03 2.544115733816e-03 
+        </DataArray>
+        <DataArray type="Float64" Name="STRAIN_XY" format="ascii">
+          -6.440111671676e-09 -7.886821226627e-08 -1.978626177032e-08 -4.839401677389e-08 
+        </DataArray>
+        <DataArray type="Float64" Name="STRAIN_YY" format="ascii">
+          2.544261071584e-03 2.544258803697e-03 2.544094388574e-03 2.544115733816e-03 
+        </DataArray>
+        <DataArray type="Float64" Name="STRAIN_ZZ" format="ascii">
+          2.543362988707e-03 2.543477425476e-03 2.544072996291e-03 2.544035013068e-03 
+        </DataArray>
+        <DataArray type="Float64" Name="NODAL_VELOCITY1" NumberOfComponents="3" format="ascii">
+          6.938893903907e-15 -1.387778780781e-14 0.000000000000e+00 -2.428612866368e-14 -1.387778780781e-14 0.000000000000e+00 6.938893903907e-15 -1.387778780781e-14 0.000000000000e+00 -2.428612866368e-14 -1.387778780781e-14 0.000000000000e+00 
+        </DataArray>
+        <DataArray type="Float64" Name="DISPLACEMENT" NumberOfComponents="3" format="ascii">
+          0.000000000000e+00 0.000000000000e+00 0.000000000000e+00 2.544252717922e-03 0.000000000000e+00 0.000000000000e+00 2.544088302799e-03 2.543786348452e-03 0.000000000000e+00 0.000000000000e+00 2.543710138456e-03 0.000000000000e+00 
+        </DataArray>
+      </PointData>
+      <CellData>
+      </CellData>
+    </Piece>
+  </UnstructuredGrid>
+</VTKFile>
