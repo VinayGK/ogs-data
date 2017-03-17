@@ -11,9 +11,29 @@
             <dimension>2</dimension>
 
             <constitutive_relation>
-                <type>LinearElasticIsotropic</type>
-                <youngs_modulus>E</youngs_modulus>
-                <poissons_ratio>nu</poissons_ratio>
+                <type>Ehlers</type>
+                <shear_modulus>G</shear_modulus>
+                <bulk_modulus>K</bulk_modulus>
+                <kappa>kappa</kappa>
+                <beta>beta</beta>
+                <gamma>gamma</gamma>
+                <hardening_modulus>hard</hardening_modulus>
+                <alpha>alpha</alpha>
+                <delta>delta</delta>
+                <eps>epsilon</eps>
+                <m>m</m>
+                <alphap>alphap</alphap>
+                <deltap>deltap</deltap>
+                <epsp>epsilonp</epsp>
+                <mp>mp</mp>
+                <betap>betap</betap>
+                <gammap>gammap</gammap>
+
+                <damage_properties>
+                    <alpha_d>alphad</alpha_d>
+                    <beta_d>betad</beta_d>
+                    <h_d>hd</h_d>
+                </damage_properties>
             </constitutive_relation>
 
             <process_variables>
@@ -21,6 +41,8 @@
             </process_variables>
 
             <secondary_variables>
+                <secondary_variable type="static"
+                    internal_name="damage" output_name="damage" />
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
@@ -45,6 +67,7 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
+                        <variable>damage</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_xy</variable>
@@ -73,20 +96,107 @@
 
     <parameters>
         <parameter>
-            <name>E</name>
+            <name>G</name>
             <type>Constant</type>
-            <value>1</value>
+            <value>11000.</value>
         </parameter>
         <parameter>
-            <name>nu</name>
+            <name>K</name>
             <type>Constant</type>
-            <value>.3</value>
+            <value>15000.</value>
         </parameter>
+        <parameter>
+            <name>kappa</name>
+            <type>Constant</type>
+            <value>3.5</value>
+        </parameter>
+        <parameter>
+            <name>beta</name>
+            <type>Constant</type>
+            <value>0.48</value>
+        </parameter>
+        <parameter>
+            <name>gamma</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>hard</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+        <parameter>
+            <name>alpha</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>delta</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>epsilon</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+        <parameter>
+            <name>m</name>
+            <type>Constant</type>
+            <value>0.54</value>
+        </parameter>
+        <parameter>
+            <name>alphap</name>
+            <type>Constant</type>
+            <value>0.0</value>
+        </parameter>
+        <parameter>
+            <name>deltap</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+        <parameter>
+            <name>epsilonp</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+        <parameter>
+            <name>mp</name>
+            <type>Constant</type>
+            <value>0.54</value>
+        </parameter>
+        <parameter>
+            <name>betap</name>
+            <type>Constant</type>
+            <value>0.48</value>
+        </parameter>
+        <parameter>
+            <name>gammap</name>
+            <type>Constant</type>
+            <value>0.</value>
+        </parameter>
+        <parameter>
+            <name>alphad</name>
+            <type>Constant</type>
+            <value>0.00005</value>
+        </parameter>
+        <parameter>
+            <name>betad</name>
+            <type>Constant</type>
+            <value>0.001</value>
+        </parameter>
+        <parameter>
+            <name>hd</name>
+            <type>Constant</type>
+            <value>2.0</value>
+        </parameter>
+
         <parameter>
             <name>displacement0</name>
             <type>Constant</type>
             <values>0 0</values>
         </parameter>
+
         <parameter>
             <name>dirichlet0</name>
             <type>Constant</type>
