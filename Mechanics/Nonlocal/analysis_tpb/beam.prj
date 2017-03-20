@@ -94,15 +94,15 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>5.</t_end>
+            <t_end>1.</t_end>
             <timesteps>
-                <pair><repeat>10000</repeat><delta_t>0.01</delta_t></pair>
+                <pair><repeat>10000</repeat><delta_t>0.001</delta_t></pair>
             </timesteps>
         </time_stepping>
 
         <output>
             <type>VTK</type>
-            <prefix>uc_01</prefix>
+            <prefix>beam</prefix>
             <timesteps>
                 <pair><repeat>10000</repeat><each_steps>1</each_steps></pair>
             </timesteps>
@@ -113,27 +113,27 @@
         <parameter>
             <name>G</name>
             <type>Constant</type>
-            <value>11000.</value>
+            <value>8333.3</value>
         </parameter>
         <parameter>
             <name>K</name>
             <type>Constant</type>
-            <value>15000.</value>
+            <value>11111.1</value>
         </parameter>
         <parameter>
             <name>kappa</name>
             <type>Constant</type>
-            <value>3.5</value>
+            <value>2.519</value>
         </parameter>
         <parameter>
             <name>beta</name>
             <type>Constant</type>
-            <value>0.48</value>
+            <value>0.47</value>
         </parameter>
         <parameter>
             <name>gamma</name>
             <type>Constant</type>
-            <value>0.0</value>
+            <value>0.</value>
         </parameter>
         <parameter>
             <name>hard</name>
@@ -158,7 +158,7 @@
         <parameter>
             <name>m</name>
             <type>Constant</type>
-            <value>0.54</value>
+            <value>0.0</value>
         </parameter>
         <parameter>
             <name>alphap</name>
@@ -178,12 +178,12 @@
         <parameter>
             <name>mp</name>
             <type>Constant</type>
-            <value>0.54</value>
+            <value>0.0</value>
         </parameter>
         <parameter>
             <name>betap</name>
             <type>Constant</type>
-            <value>0.48</value>
+            <value>0.47</value>
         </parameter>
         <parameter>
             <name>gammap</name>
@@ -193,7 +193,7 @@
         <parameter>
             <name>alphad</name>
             <type>Constant</type>
-            <value>0.00105</value>
+            <value>0.001025</value>
         </parameter>
         <parameter>
             <name>betad</name>
@@ -203,7 +203,7 @@
         <parameter>
             <name>hd</name>
             <type>Constant</type>
-            <value>2.0</value>
+            <value>15.0</value>
         </parameter>
 
         <parameter>
@@ -267,8 +267,8 @@
     <curves>
         <curve>
             <name>Dirichlet_top_temporal</name>
-            <coords>0. 5.</coords>
-            <values>0. -0.0025</values>
+            <coords>0. 1.</coords>
+            <values>0. -0.001</values>
         </curve>
 
         <curve>
@@ -326,7 +326,7 @@
                     <component>1</component>
                     <parameter>Dirichlet_top</parameter>
                 </boundary_condition>
-             
+
             </boundary_conditions>
 
         </process_variable>
@@ -351,10 +351,6 @@
                 <max_iteration_step>10000</max_iteration_step>
                 <error_tolerance>1e-8</error_tolerance>
             </eigen>
-            <petsc>
-                <prefix>sd</prefix>
-                <parameters>-sd_ksp_type cg -sd_pc_type bjacobi -sd_ksp_rtol 1e-16 -sd_ksp_max_it 10000</parameters>
-            </petsc>
         </linear_solver>
     </linear_solvers>
 
