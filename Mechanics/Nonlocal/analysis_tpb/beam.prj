@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>beam_short3.vtu</mesh>
+    <mesh>beam.vtu</mesh>
     <geometry>beam.gml</geometry>
 
     <processes>
@@ -70,7 +70,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-14</abstol>
+                    <abstol>1e-6</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -193,7 +193,7 @@
         <parameter>
             <name>alphad</name>
             <type>Constant</type>
-            <value>0.00005</value>
+            <value>0.00105</value>
         </parameter>
         <parameter>
             <name>betad</name>
@@ -344,12 +344,12 @@
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i BiCGSTAB -p jacobi -tol 1e-16 -maxiter 10000</lis>
+            <lis>-i BiCGSTAB -p jacobi -tol 1e-8 -maxiter 10000</lis>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
-                <error_tolerance>1e-16</error_tolerance>
+                <error_tolerance>1e-8</error_tolerance>
             </eigen>
             <petsc>
                 <prefix>sd</prefix>
