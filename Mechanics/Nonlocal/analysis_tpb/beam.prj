@@ -344,7 +344,7 @@
     <linear_solvers>
         <linear_solver>
             <name>general_linear_solver</name>
-            <lis>-i BiCGSTAB -p jacobi -tol 1e-8 -maxiter 10000</lis>
+            <lis>-i BiCGSTAB -p ilu -tol 1e-8 -maxiter 10000</lis>
             <eigen>
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>DIAGONAL</precon_type>
