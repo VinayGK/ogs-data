@@ -210,7 +210,7 @@
         <parameter>
             <name>hd</name>
             <type>Constant</type>
-            <value>15.0</value>
+            <value>1.0</value>
         </parameter>
 
         <parameter>
