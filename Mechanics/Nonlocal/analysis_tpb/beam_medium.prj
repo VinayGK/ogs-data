@@ -34,7 +34,13 @@
                     <beta_d>betad</beta_d>
                     <h_d>hd</h_d>
                 </damage_properties>
+                <nonlinear_solver>
+                    <maximum_iterations>1000</maximum_iterations>
+                    <error_tolerance>1e-15</error_tolerance>
+                </nonlinear_solver>
             </constitutive_relation>
+
+            <!--internal_length>0.025</internal_length-->
 
             <process_variables>
                 <process_variable>displacement</process_variable>
