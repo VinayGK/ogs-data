@@ -51,6 +51,10 @@
                 <!--secondary_variable type="static"
                     internal_name="damage" output_name="damage" /-->
                 <secondary_variable type="static"
+                    internal_name="eps_p_V" output_name="eps_p_V" />
+                <secondary_variable type="static"
+                    internal_name="eps_p_D_xx" output_name="eps_p_D_xx" />
+                <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
                     internal_name="sigma_yy" output_name="sigma_yy" />
@@ -85,6 +89,8 @@
                     <variables>
                         <variable>displacement</variable>
                         <!--variable>damage</variable-->
+                        <variable>eps_p_V</variable>
+                        <variable>eps_p_D_xx</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
