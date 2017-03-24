@@ -198,7 +198,7 @@
         <parameter>
             <name>pressure_in</name>
             <type>Constant</type>
-            <value>2</value>
+            <value>-2</value>
         </parameter>
 	<parameter>
             <name>pressure_out</name>
