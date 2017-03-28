@@ -40,7 +40,7 @@
                 </nonlinear_solver>
             </constitutive_relation>
 
-            <!--internal_length>0.025</internal_length-->
+            <internal_length>0.025</internal_length>
 
             <process_variables>
                 <process_variable>displacement</process_variable>
@@ -76,7 +76,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-6</abstol>
+                    <abstol>1e-14</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -93,6 +93,7 @@
                         <variable>epsilon_zz</variable>
                         <variable>epsilon_xy</variable>
                     </variables>
+                    <integration_point_data>1</integration_point_data>
                 </output>
             </process>
         </processes>
@@ -302,10 +303,10 @@
                 <!-- fixed boundaries -->
                 <boundary_condition>
                     <geometrical_set>beam</geometrical_set>
-                    <geometry>v_xy</geometry>
+                    <geometry>l_y</geometry>
                     <type>Dirichlet</type>
                     <component>0</component>
-                    <parameter>Dirichlet_left</parameter>
+                    <parameter>Dirichlet0</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
@@ -313,7 +314,7 @@
                     <geometry>v_xy</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
-                    <parameter>Dirichlet_front</parameter>
+                    <parameter>Dirichlet0</parameter>
                 </boundary_condition>
 
                 <boundary_condition>
@@ -321,13 +322,13 @@
                     <geometry>v_y</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
-                    <parameter>Dirichlet_bottom</parameter>
+                    <parameter>Dirichlet0</parameter>
                 </boundary_condition>
 
                 <!-- force -->
                 <boundary_condition>
                     <geometrical_set>beam</geometrical_set>
-                    <geometry>l_y</geometry>
+                    <geometry>tamper</geometry>
                     <type>Dirichlet</type>
                     <component>1</component>
                     <parameter>Dirichlet_top</parameter>
