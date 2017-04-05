@@ -22,6 +22,8 @@
 
             <secondary_variables>
                 <secondary_variable type="static"
+                    internal_name="free_energy_density" output_name="free_energy_density" />
+                <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
                     internal_name="sigma_yy" output_name="sigma_yy" />
@@ -59,6 +61,7 @@
                 <output>
                     <variables>
                         <variable>displacement</variable>
+                        <variable>free_energy_density</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
