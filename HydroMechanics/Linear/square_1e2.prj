@@ -82,6 +82,8 @@
                         <variable>velocity_x</variable>
                         <variable>velocity_y</variable>
                     </variables>
+
+                    <integration_point_data>1</integration_point_data>
                 </output>
             </process>
         </processes>

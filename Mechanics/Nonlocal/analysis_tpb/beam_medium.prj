@@ -34,9 +34,10 @@
                     <beta_d>betad</beta_d>
                     <h_d>hd</h_d>
                 </damage_properties>
+
                 <nonlinear_solver>
                     <maximum_iterations>1000</maximum_iterations>
-                    <error_tolerance>1e-15</error_tolerance>
+                    <error_tolerance>1e-6</error_tolerance>
                 </nonlinear_solver>
             </constitutive_relation>
 
@@ -49,6 +50,10 @@
             <secondary_variables>
                 <secondary_variable type="static"
                     internal_name="damage" output_name="damage" />
+                <secondary_variable type="static"
+                    internal_name="eps_p_V" output_name="eps_p_V" />
+                <secondary_variable type="static"
+                    internal_name="eps_p_D_xx" output_name="eps_p_D_xx" />
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
@@ -84,6 +89,8 @@
                     <variables>
                         <variable>displacement</variable>
                         <variable>damage</variable>
+                        <variable>eps_p_V</variable>
+                        <variable>eps_p_D_xx</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -101,7 +108,7 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>1.</t_end>
+            <t_end>0.1</t_end>
             <timesteps>
                 <pair><repeat>10000</repeat><delta_t>0.001</delta_t></pair>
             </timesteps>
@@ -145,7 +152,7 @@
         <parameter>
             <name>hard</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>0</value>
         </parameter>
         <parameter>
             <name>alpha</name>

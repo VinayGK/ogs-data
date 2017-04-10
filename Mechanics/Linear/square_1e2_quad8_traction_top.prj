@@ -49,6 +49,7 @@
                         <variable>sigma_yy</variable>
                         <variable>sigma_xy</variable>
                     </variables>
+                    <integration_point_data>1</integration_point_data>
                 </output>
             </process>
         </processes>

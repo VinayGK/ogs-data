@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>beam_medium.vtu</mesh>
+    <mesh>beam_medium2.vtu</mesh>
     <geometry>beam.gml</geometry>
 
     <processes>
         <process>
             <name>SD</name>
             <type>SMALL_DEFORMATION_NONLOCAL</type>
-            <integration_order>2</integration_order>
+            <integration_order>3</integration_order>
             <dimension>2</dimension>
 
             <constitutive_relation>
@@ -34,6 +34,7 @@
                     <beta_d>betad</beta_d>
                     <h_d>hd</h_d>
                 </damage_properties>
+
                 <nonlinear_solver>
                     <maximum_iterations>1000</maximum_iterations>
                     <error_tolerance>1e-15</error_tolerance>
@@ -49,6 +50,10 @@
             <secondary_variables>
                 <secondary_variable type="static"
                     internal_name="damage" output_name="damage" />
+                <secondary_variable type="static"
+                    internal_name="eps_p_V" output_name="eps_p_V" />
+                <secondary_variable type="static"
+                    internal_name="eps_p_D_xx" output_name="eps_p_D_xx" />
                 <secondary_variable type="static"
                     internal_name="sigma_xx" output_name="sigma_xx" />
                 <secondary_variable type="static"
@@ -76,7 +81,7 @@
                 <convergence_criterion>
                     <type>DeltaX</type>
                     <norm_type>NORM2</norm_type>
-                    <abstol>1e-6</abstol>
+                    <abstol>1e-14</abstol>
                 </convergence_criterion>
                 <time_discretization><type>BackwardEuler</type></time_discretization>
 
@@ -84,6 +89,8 @@
                     <variables>
                         <variable>displacement</variable>
                         <variable>damage</variable>
+                        <variable>eps_p_V</variable>
+                        <variable>eps_p_D_xx</variable>
                         <variable>sigma_xx</variable>
                         <variable>sigma_yy</variable>
                         <variable>sigma_zz</variable>
@@ -101,9 +108,9 @@
         <time_stepping>
             <type>FixedTimeStepping</type>
             <t_initial>0</t_initial>
-            <t_end>1.</t_end>
+            <t_end>0.1</t_end>
             <timesteps>
-                <pair><repeat>10000</repeat><delta_t>0.001</delta_t></pair>
+                <pair><repeat>10000</repeat><delta_t>0.0001</delta_t></pair>
             </timesteps>
         </time_stepping>
 
@@ -145,7 +152,7 @@
         <parameter>
             <name>hard</name>
             <type>Constant</type>
-            <value>0.</value>
+            <value>1e6</value>
         </parameter>
         <parameter>
             <name>alpha</name>
@@ -284,7 +291,7 @@
         <process_variable>
             <name>displacement</name>
             <components>2</components>
-            <order>1</order>
+            <order>2</order>
 
             <initial_condition>displacement0</initial_condition>
 
@@ -345,7 +352,7 @@
                 <solver_type>BiCGSTAB</solver_type>
                 <precon_type>DIAGONAL</precon_type>
                 <max_iteration_step>10000</max_iteration_step>
-                <error_tolerance>1e-8</error_tolerance>
+                <error_tolerance>1e-14</error_tolerance>
             </eigen>
         </linear_solver>
     </linear_solvers>
