@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <OpenGeoSysProject>
-    <mesh>notched_tensile_test.vtu</mesh>
+    <mesh>notched_tensile_test_2.vtu</mesh>
     <geometry>notched_tensile_test.gml</geometry>
 
     <processes>
